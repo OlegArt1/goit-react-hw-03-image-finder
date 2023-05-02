@@ -1,0 +1,21 @@
+.modal__block
+{
+    display: flex;
+    justify-content: center;
+}
+.modal__image
+{
+    position: fixed;
+    width: 50%;
+    height: 70%;
+    cursor: pointer;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms,
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    border-radius: 50px;
+    border: 2px solid orange;
+}
+    .modal__image:hover
+    {
+        transform: scale(1.05);
+        border: 2px solid rgb(73, 176, 184);
+    }
