@@ -5,7 +5,7 @@ export const Modal = ({ src, title, alt }) =>
 {
     return (
         <article class={Css.modal__block}>     
-            <img class={Css.modal__image} src={src} style="margin-top: ${heightContainer}px;" title={title} alt={alt}/>
+            <img class={Css.modal__image} src={src} title={title} alt={alt}/>
         </article>
     );
 }
