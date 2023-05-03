@@ -31,7 +31,7 @@ export class App extends Component
         {
             const response = await fetchApi(this.state.apiUrl, this.state.apiKey, this.state.searchText, this.state.amount);
             
-            this.setState({ response });
+            this.setState({ images: response.data.hits });
         }
         catch (error)
         {

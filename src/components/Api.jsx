@@ -14,5 +14,5 @@ export const fetchApi = async (apiUrl, apiKey, searchText, amount) =>
             apiKey: apiKey,
         },
     });
-    return response.data.hits;
+    return response;
 }
