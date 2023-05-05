@@ -9,6 +9,7 @@ import { Loader } from "./loader/Loader";
 const API_KEY = "8761127-15c354fd40a23de8d36bfe25d";
 const API_URL = "https://pixabay.com/api";
 const number = 12;
+let count = 0;
 
 export class App extends Component
 {
@@ -34,6 +35,12 @@ export class App extends Component
                 this.setState({ showModal: false });
             }
         });
+        if (count === 0)
+        {
+            const titleElement = document.querySelector("h2");
+            
+            titleElement.textContent = '';
+        }
     }
     handleClickSearch = (evt) =>
     {
@@ -107,6 +114,8 @@ export class App extends Component
 
         this.setState({ isLoading: true });
         
+        count++;
+
         if (searchElement.value === '')
         {
             titleElement.style.height = (window.innerHeight / 6) + 'px';
@@ -143,7 +152,7 @@ export class App extends Component
                             </div>
                             : <h2 style={{ paddingTop: 70, paddingBottom: 70, height: (window.innerHeight / 6), textAlign: 'center', color: 'lightgray' }}>Fill in the empty columns!</h2>}
                     </main>
-                    : <h2 style={{ paddingTop: 70, paddingBottom: 70, height: (window.innerHeight / 6), textAlign: 'center', color: 'lightgray' }}>Pictures not found!</h2>}
+                    : <h2 style={{ paddingTop: 70, paddingBottom: 70, height: (window.innerHeight / 6), textAlign: 'center', color: 'lightgray' }}>Pictares not found!</h2>}
                 {showModal === true &&
                     <Modal src={this.state.srcUrl} alt={this.state.altText} onClick={this.onCloseModal}/>}
                 {isLoading === true && <Loader/>}
