@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Css from "./ImageGallery.module.css";
 
-export const ImageGalleryItem = ({ data, on_click }) =>
+export const ImageGalleryItem = ({ data, onClick }) =>
 {
     return (
         <li className={Css.gallery__item}>
@@ -9,7 +9,7 @@ export const ImageGalleryItem = ({ data, on_click }) =>
             {
                 return (
                     <article className={Css.gallery__block}>
-                        <img id={data.id} className={Css.gallery__image} src={data.webformatURL} title={data.user} alt={data.user} onClick={on_click}/>
+                        <img id={data.id} className={Css.gallery__image} src={data.webformatURL} title={data.user} alt={data.user} onClick={onClick}/>
                         {/*
                             <p className={Css.gallery__image_block}>
                                 <span className={Css.gallery__image_name}>{data.user}</span>
@@ -48,5 +48,5 @@ export const ImageGalleryItem = ({ data, on_click }) =>
 ImageGalleryItem.propTypes =
 {
     data: PropTypes.array.isRequired,
-    on_click: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
